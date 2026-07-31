@@ -25,6 +25,9 @@ export function Header() {
           <Link href="/people" className="hover:text-ink transition-colors">
             People
           </Link>
+          <Link href="/organizations" className="hover:text-ink transition-colors">
+            Organizations
+          </Link>
           <Link href="/hardware" className="hover:text-ink transition-colors">
             Hardware
           </Link>

@@ -28,6 +28,12 @@ const sections = [
       'The humans shaping the industry: lab leadership, researchers, and the figures controlling compute and capital.',
   },
   {
+    href: '/organizations',
+    title: 'Organizations',
+    description:
+      'The institutions of the field: frontier labs, platforms, the semiconductor supply chain, research institutes, and governance bodies.',
+  },
+  {
     href: '/hardware',
     title: 'Hardware',
     description:
