@@ -10,6 +10,9 @@ import rehypeKatex from 'rehype-katex';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeStringify from 'rehype-stringify';
+import rehypeGlossary from './rehype-glossary';
+import { glossary } from './glossary';
+import { annotateAbstractHtml } from './glossary-html';
 
 const PAPERS_DIR = path.join(process.cwd(), 'content', 'papers');
 
@@ -22,6 +25,7 @@ export interface PaperMeta {
   date: string;
   abstract: string;
   abstractHtml: string;
+  abstractGlossaryHtml: string;
   tags: string[];
   wordCount: number;
   readingTime: number;
@@ -58,6 +62,7 @@ function renderInlineMarkdown(src: string): string {
 function metaFromFrontmatter(slug: string, data: Record<string, unknown>): PaperMeta {
   const wordCount = typeof data.wordCount === 'number' ? data.wordCount : 0;
   const abstract = String(data.abstract ?? '');
+  const abstractHtml = renderInlineMarkdown(abstract);
   return {
     slug,
     title: String(data.title ?? slug),
@@ -66,7 +71,8 @@ function metaFromFrontmatter(slug: string, data: Record<string, unknown>): Paper
     affiliation: data.affiliation ? String(data.affiliation) : undefined,
     date: String(data.date ?? ''),
     abstract,
-    abstractHtml: renderInlineMarkdown(abstract),
+    abstractHtml,
+    abstractGlossaryHtml: annotateAbstractHtml(abstractHtml),
     tags: Array.isArray(data.tags) ? (data.tags as string[]) : [],
     wordCount,
     readingTime: estimateReadingTime(wordCount),
@@ -104,6 +110,7 @@ export async function getPaper(slug: string): Promise<Paper | null> {
       .use(rehypeSlug)
       .use(rehypeAutolinkHeadings, { behavior: 'wrap' })
       .use(rehypeKatex)
+      .use(rehypeGlossary, glossary)
       .use(rehypeStringify)
       .process(content);
     return {

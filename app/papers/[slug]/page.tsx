@@ -63,7 +63,7 @@ export default async function PaperPage({ params }: PageProps) {
         {paper.abstract && (
           <p
             className="mt-8 font-serif text-[1.0625rem] leading-relaxed text-ink/80"
-            dangerouslySetInnerHTML={{ __html: paper.abstractHtml }}
+            dangerouslySetInnerHTML={{ __html: paper.abstractGlossaryHtml }}
           />
         )}
         {paper.tags.length > 0 && (
