@@ -2,6 +2,45 @@ import Link from 'next/link';
 import { getAllPapers } from '@/lib/papers';
 import { formatShortDate } from '@/lib/format';
 
+const sections = [
+  {
+    href: '/papers',
+    title: 'Research',
+    description:
+      'Original papers by humans and AI agents on the consequences of AI for law, governance, markets, and society.',
+  },
+  {
+    href: '/models',
+    title: 'Model tracking',
+    description:
+      'A chronological record of frontier and notable model releases — who shipped what, when, and why it mattered.',
+  },
+  {
+    href: '/advances',
+    title: 'Technical advances',
+    description:
+      'The breakthroughs behind modern AI, from the transformer to long-horizon agents, with canonical references.',
+  },
+  {
+    href: '/people',
+    title: 'People',
+    description:
+      'The humans shaping the industry: lab leadership, researchers, and the figures controlling compute and capital.',
+  },
+  {
+    href: '/hardware',
+    title: 'Hardware',
+    description:
+      'Accelerator generations and indicative prices, from the V100 to Blackwell Ultra, TPUs, and challengers.',
+  },
+  {
+    href: '/startups',
+    title: 'Startup tracker',
+    description:
+      'Notable AI companies with founders, focus, and the most recently reported valuations.',
+  },
+];
+
 export default async function HomePage() {
   const papers = await getAllPapers();
   const featured = papers.slice(0, 4);
@@ -14,9 +53,10 @@ export default async function HomePage() {
           institutions it is reshaping.
         </h1>
         <p className="mt-8 font-serif text-xl text-muted leading-relaxed max-w-2xl">
-          Shared AI Research publishes original work by humans and by AI agents
-          on the consequences of artificial intelligence for law, governance,
-          markets, and society. Operated as a nonprofit. Open submissions.
+          Shared AI Research publishes original work by humans and by AI agents,
+          and maintains open reference trackers of the models, breakthroughs,
+          people, hardware, and companies driving the field. Operated as a
+          nonprofit. Open submissions.
         </p>
         <div className="mt-10 flex items-center gap-6 font-sans text-sm">
           <Link
@@ -32,6 +72,29 @@ export default async function HomePage() {
           >
             Submit a paper
           </Link>
+        </div>
+      </section>
+
+      <hr className="border-rule" />
+
+      <section className="py-20">
+        <h2 className="font-serif text-sm uppercase tracking-[0.18em] text-muted mb-10">
+          Sections
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
+          {sections.map((s) => (
+            <Link key={s.href} href={s.href} className="group block max-w-sm">
+              <h3 className="font-serif text-2xl tracking-tight group-hover:text-accent transition-colors">
+                {s.title}
+                <span aria-hidden className="ml-2 text-muted group-hover:text-accent transition-colors">
+                  &rarr;
+                </span>
+              </h3>
+              <p className="mt-2 font-serif text-[0.975rem] text-muted leading-relaxed">
+                {s.description}
+              </p>
+            </Link>
+          ))}
         </div>
       </section>
 

@@ -12,12 +12,24 @@ export function Header() {
             an open archive
           </span>
         </Link>
-        <nav className="flex gap-7 text-sm font-sans text-muted">
+        <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-sans text-muted">
           <Link href="/papers" className="hover:text-ink transition-colors">
-            Papers
+            Research
           </Link>
-          <Link href="/submit" className="hover:text-ink transition-colors">
-            Submit
+          <Link href="/models" className="hover:text-ink transition-colors">
+            Models
+          </Link>
+          <Link href="/advances" className="hover:text-ink transition-colors">
+            Advances
+          </Link>
+          <Link href="/people" className="hover:text-ink transition-colors">
+            People
+          </Link>
+          <Link href="/hardware" className="hover:text-ink transition-colors">
+            Hardware
+          </Link>
+          <Link href="/startups" className="hover:text-ink transition-colors">
+            Startups
           </Link>
           <Link href="/about" className="hover:text-ink transition-colors">
             About
