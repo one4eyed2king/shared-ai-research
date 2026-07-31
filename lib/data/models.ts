@@ -1,7 +1,7 @@
 // Frontier and notable AI model releases, newest first.
 //
 // Entries record what was publicly known at release. Context windows are the
-// maximum generally available at launch. Data compiled as of early 2026;
+// maximum generally available at launch. Data compiled as of July 2026;
 // entries marked with an approximate date reflect announcements whose exact
 // release date is not recorded here.
 
@@ -14,15 +14,139 @@ export interface ModelEntry {
   note: string;
 }
 
-export const modelsUpdated = 'January 2026';
+export const modelsUpdated = 'July 2026';
 
 export const models: ModelEntry[] = [
   {
-    name: 'Claude 5 family (Fable, Opus, Sonnet)',
+    name: 'Claude Opus 5',
     developer: 'Anthropic',
-    released: '2026',
+    released: '2026-07',
     access: 'Proprietary',
-    note: 'Anthropic’s fifth model generation, introducing the Mythos-class tier above Opus.',
+    context: '1M',
+    note: 'Opus-tier Claude 5 release; close to Fable 5 on agentic coding at half the price, with an optional faster “fast mode”.',
+  },
+  {
+    name: 'Kimi K3',
+    developer: 'Moonshot AI',
+    released: '2026-07',
+    access: 'Open weights',
+    context: '1M',
+    note: '2.8T-parameter MoE, the largest open-weight release to date; weights published July 27 under a bespoke (non-OSI) license.',
+  },
+  {
+    name: 'GPT-5.6 (Sol, Terra, Luna)',
+    developer: 'OpenAI',
+    released: '2026-07',
+    access: 'Proprietary',
+    context: '1M',
+    note: 'Three-tier family distilled from a single base run; replaced GPT-5.5 across ChatGPT and the API.',
+  },
+  {
+    name: 'Grok 4.5',
+    developer: 'xAI (SpaceX)',
+    released: '2026-07',
+    access: 'Proprietary',
+    context: '500K',
+    note: 'First Grok built specifically for agentic coding; first major release since xAI folded into SpaceX in February 2026.',
+  },
+  {
+    name: 'Claude Sonnet 5',
+    developer: 'Anthropic',
+    released: '2026-06',
+    access: 'Proprietary',
+    context: '1M',
+    note: 'Default mid-tier Claude 5 model; near-Opus-4.8 performance at lower prices, and the new free-tier model on Claude.ai.',
+  },
+  {
+    name: 'GLM-5.2',
+    developer: 'Zhipu AI (Z.ai)',
+    released: '2026-06',
+    access: 'Open weights',
+    context: '1M',
+    note: '753B MoE under an MIT license; at release the strongest open-weight coding model, at a fraction of frontier API prices.',
+  },
+  {
+    name: 'Claude Fable 5 / Mythos 5',
+    developer: 'Anthropic',
+    released: '2026-06',
+    access: 'Proprietary',
+    context: '1M',
+    note: 'First public Mythos-class model, a tier above Opus; access was suspended for most of June under a U.S. export-control order before being restored; the less-restricted Mythos 5 variant is limited to approved organizations.',
+  },
+  {
+    name: 'Qwen3.7-Max',
+    developer: 'Alibaba',
+    released: '2026-05',
+    access: 'Proprietary',
+    context: '1M',
+    note: 'API-only flagship built for long-horizon agent runs; marked Alibaba’s shift away from open weights for its top tier.',
+  },
+  {
+    name: 'Gemini 3.5 Flash',
+    developer: 'Google DeepMind',
+    released: '2026-05',
+    access: 'Proprietary',
+    note: 'I/O 2026 workhorse that beat Gemini 3.1 Pro on coding and agentic benchmarks; shipped while the 3.5 Pro flagship was repeatedly delayed.',
+  },
+  {
+    name: 'DeepSeek V4 (Pro, Flash)',
+    developer: 'DeepSeek',
+    released: '2026-04',
+    access: 'Open weights',
+    context: '1M',
+    note: 'MIT-licensed MoE pair (V4-Pro 1.6T/49B active, V4-Flash 284B); previewed in April, stable in July; its thinking mode absorbed the R1 reasoning line.',
+  },
+  {
+    name: 'GPT-5.5',
+    developer: 'OpenAI',
+    released: '2026-04',
+    access: 'Proprietary',
+    note: 'Agent-focused flagship pitched as a step toward an AI “super app”; GPT-5.5 Instant became the ChatGPT default in May.',
+  },
+  {
+    name: 'Muse Spark',
+    developer: 'Meta',
+    released: '2026-04',
+    access: 'Proprietary',
+    note: 'First model from Meta Superintelligence Labs and Meta’s first closed-weight flagship, ending its open-release strategy.',
+  },
+  {
+    name: 'GPT-5.4',
+    developer: 'OpenAI',
+    released: '2026-03',
+    access: 'Proprietary',
+    note: 'Mainline GPT-5 refresh on OpenAI’s quickened release cadence; its xHigh reasoning tier led agentic tool-use benchmarks.',
+  },
+  {
+    name: 'Gemini 3.1 Pro',
+    developer: 'Google DeepMind',
+    released: '2026-02',
+    access: 'Proprietary',
+    context: '1M',
+    note: 'Incremental Pro flagship update; native multimodal input and output across text, image, audio, video, and code.',
+  },
+  {
+    name: 'Claude Opus 4.6–4.8',
+    developer: 'Anthropic',
+    released: '2026-02',
+    access: 'Proprietary',
+    note: 'Rapid-cadence Opus point releases (4.6 in February, 4.7 in April, 4.8 in May) bridging the fourth generation to Claude 5.',
+  },
+  {
+    name: 'GPT-5.2',
+    developer: 'OpenAI',
+    released: '2025-12',
+    access: 'Proprietary',
+    context: '400K',
+    note: 'Instant, Thinking, and Pro variants; OpenAI’s rapid answer to Gemini 3, with stronger long-context and enterprise coding.',
+  },
+  {
+    name: 'Mistral Large 3',
+    developer: 'Mistral AI',
+    released: '2025-12',
+    access: 'Open weights',
+    context: '256K',
+    note: '675B MoE (41B active) multimodal flagship under Apache 2.0; Europe’s strongest open-weight release.',
   },
   {
     name: 'Claude Opus 4.5',
@@ -45,6 +169,7 @@ export const models: ModelEntry[] = [
     developer: 'OpenAI',
     released: '2025-11',
     access: 'Proprietary',
+    context: '400K',
     note: 'Refinement of GPT-5 with adaptive reasoning effort and improved instruction following.',
   },
   {
@@ -138,7 +263,7 @@ export const models: ModelEntry[] = [
     released: '2025-01',
     access: 'Open weights',
     context: '128K',
-    note: 'Open reasoning model rivaling o1 at a fraction of the training cost; triggered a market-wide repricing of AI capex assumptions.',
+    note: 'Open reasoning model rivaling o1 at a much lower reported training cost; triggered a market-wide repricing of AI capex assumptions.',
   },
   {
     name: 'DeepSeek-V3',
@@ -146,7 +271,7 @@ export const models: ModelEntry[] = [
     released: '2024-12',
     access: 'Open weights',
     context: '128K',
-    note: '671B MoE (37B active) trained for roughly $5.6M in compute; basis for R1.',
+    note: '671B MoE (37B active); the reported ~$5.6M compute cost covered only the final training run and is widely considered to understate total cost; basis for R1.',
   },
   {
     name: 'o1',

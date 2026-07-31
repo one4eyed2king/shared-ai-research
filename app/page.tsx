@@ -37,7 +37,7 @@ const sections = [
     href: '/hardware',
     title: 'Hardware',
     description:
-      'Accelerator generations and indicative prices, from the V100 to Blackwell Ultra, TPUs, and challengers.',
+      'Accelerator generations and indicative prices, from the V100 to Vera Rubin, TPUs, and challengers.',
   },
   {
     href: '/startups',

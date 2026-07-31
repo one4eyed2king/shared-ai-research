@@ -2,7 +2,7 @@
 //
 // Each entry names the advance, when it landed, what it is, and why it
 // mattered. References cite the canonical paper or release where one exists.
-// Data compiled as of early 2026.
+// Data compiled as of July 2026.
 
 export interface AdvanceEntry {
   year: number;
@@ -12,7 +12,7 @@ export interface AdvanceEntry {
   reference?: string;
 }
 
-export const advancesUpdated = 'January 2026';
+export const advancesUpdated = 'July 2026';
 
 export const advances: AdvanceEntry[] = [
   {
@@ -163,8 +163,78 @@ export const advances: AdvanceEntry[] = [
   },
   {
     year: 2025,
+    name: 'Verifiable rewards and RL environments',
+    what: 'Post-training shifted from learned preference models to rewards a program can check — test suites, math answers, proof checkers — with GRPO as the workhorse algorithm.',
+    why: 'Made capability a function of environment quality; building rich RL environments and verifiers became the field’s new bottleneck and an industry of its own.',
+    reference: 'Shao et al., GRPO (2024); Lambert et al., Tülu 3 (2024)',
+  },
+  {
+    year: 2025,
+    name: 'Diffusion language models',
+    what: 'Generate text by parallel iterative denoising instead of one token at a time; Mercury and Gemini Diffusion demonstrated 1,000+ tokens per second at competitive quality.',
+    why: 'The first credible break with autoregression for text — an order-of-magnitude latency advantage that matters for coding assistants and agent loops.',
+    reference: 'Nie et al., LLaDA (2025); Inception Labs, Mercury (2025)',
+  },
+  {
+    year: 2025,
+    name: 'Circuit tracing and attribution graphs',
+    what: 'Cross-layer transcoders turn a forward pass into a readable graph of interacting features, applied to a production model (Claude 3.5 Haiku) and open-sourced.',
+    why: 'Interpretability graduated from toy models to deployed ones — exposing planning ahead, shared multilingual circuits, and unfaithful reasoning; named a 2026 MIT Technology Review breakthrough.',
+    reference: 'Lindsey et al., “On the Biology of a Large Language Model” (2025)',
+  },
+  {
+    year: 2025,
+    name: 'Video generation and world models',
+    what: 'Veo 3 and Sora 2 generated physics-plausible video with synchronized audio; Genie 3 produced explorable 720p worlds in real time that stay coherent for minutes.',
+    why: 'Video crossed from novelty to production tool, and promptable interactive worlds opened a path to training agents in simulation.',
+    reference: 'Google DeepMind, Veo 3 and Genie 3 (2025); OpenAI, Sora 2 (2025)',
+  },
+  {
+    year: 2025,
+    name: 'Muon at frontier scale',
+    what: 'A matrix-orthogonalizing optimizer — stabilized by MuonClip’s qk-clip — trained the trillion-parameter Kimi K2 on 15.5T tokens with zero loss spikes.',
+    why: 'The first optimizer to displace Adam in frontier training, with roughly 2× token efficiency; optimizer research reopened after a decade of default AdamW.',
+    reference: 'Jordan et al., Muon (2024); Kimi Team, Kimi K2 (2025)',
+  },
+  {
+    year: 2025,
+    name: 'Olympiad-gold mathematical reasoning',
+    what: 'General-purpose reasoning models from OpenAI and Google DeepMind solved 5 of 6 IMO problems in natural language under contest conditions, reaching the gold-medal bar.',
+    why: 'Frontier reasoning crossed a threshold humans use to certify their best; the techniques — scaled RL and parallel test-time search — fed back into production models within months.',
+    reference: 'OpenAI experimental reasoning model; Google DeepMind, Gemini Deep Think (2025)',
+  },
+  {
+    year: 2025,
+    name: 'Hybrid linear attention in production',
+    what: 'Frontier open models (Qwen3-Next, Kimi Linear) interleave gated linear-attention layers with full attention at roughly 3:1, keeping KV-cache costs near-constant with length.',
+    why: 'The state-space promise cashed in at scale — long-context serving stopped scaling quadratically, and pure softmax attention lost its monopoly on frontier architecture.',
+    reference: 'Yang et al., Gated DeltaNet (2024); Kimi Team, Kimi Linear (2025)',
+  },
+  {
+    year: 2025,
+    name: 'Natively trainable sparse attention',
+    what: 'DeepSeek trained attention to be sparse from the start — a lightweight indexer selects the few tokens worth full attention (NSA, then DSA in DeepSeek-V3.2).',
+    why: 'Cut long-context compute from quadratic to near-linear with negligible quality loss, roughly halving long-context API costs.',
+    reference: 'Yuan et al., Native Sparse Attention (2025); DeepSeek-V3.2 (2025)',
+  },
+  {
+    year: 2025,
     name: 'Long-horizon agents',
-    what: 'Context management, memory, and sub-agent orchestration let models sustain coherent work over hours and thousands of tool calls.',
+    what: 'Context management, memory, and orchestrator–worker sub-agent architectures let models sustain coherent work over hours and thousands of tool calls.',
     why: 'The unit of delegation shifted from the prompt to the task; autonomous coding sessions became products rather than demos.',
+    reference: 'Anthropic, “How we built our multi-agent research system” (2025)',
+  },
+  {
+    year: 2026,
+    name: 'Agent memory and learning from experience',
+    what: 'Agents distill their own trajectories into reusable strategies — workflow memories, reasoning banks, RL-trained memory managers — improving without weight updates.',
+    why: 'A practical answer to continual learning: the limiting factor for deployed agents shifted from raw model capability to how experience is stored, consolidated, and reused.',
+    reference: 'Wang et al., Agent Workflow Memory (2024)',
+  },
+  {
+    year: 2026,
+    name: 'The inference build-out',
+    what: 'Rack-scale systems (GB200 NVL72) and wafer-scale chips pushed serving toward 1,000 tokens per second on trillion-parameter models; NVIDIA absorbed Groq’s LPU line as a decode co-processor.',
+    why: 'Roughly 10× better tokens-per-watt generation over generation made long reasoning traces and always-on agents economically routine; inference, not training, now drives the hardware market.',
   },
 ];

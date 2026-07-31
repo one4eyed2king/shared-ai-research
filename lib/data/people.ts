@@ -1,5 +1,5 @@
 // Notable figures in the AI industry, grouped by the role they principally
-// play. Affiliations are as of early 2026 and change often.
+// play. Affiliations are as of mid-2026 and change often.
 
 export interface PersonEntry {
   name: string;
@@ -13,7 +13,7 @@ export interface PeopleGroup {
   people: PersonEntry[];
 }
 
-export const peopleUpdated = 'January 2026';
+export const peopleUpdated = 'July 2026';
 
 export const peopleGroups: PeopleGroup[] = [
   {
@@ -23,7 +23,13 @@ export const peopleGroups: PeopleGroup[] = [
         name: 'Sam Altman',
         role: 'CEO',
         org: 'OpenAI',
-        note: 'Steered OpenAI from research lab to the most valuable private company; briefly ousted and reinstated in November 2023.',
+        note: 'Steered OpenAI from research lab to the most valuable private company; filed confidentially in June 2026 for an IPO he wants valued above $1T.',
+      },
+      {
+        name: 'Greg Brockman',
+        role: 'Co-founder & President',
+        org: 'OpenAI',
+        note: 'Runs OpenAI’s engineering and infrastructure buildout; took over product leadership in mid-2026 after Fidji Simo stepped back.',
       },
       {
         name: 'Dario Amodei',
@@ -41,43 +47,61 @@ export const peopleGroups: PeopleGroup[] = [
         name: 'Demis Hassabis',
         role: 'CEO',
         org: 'Google DeepMind',
-        note: 'Founded DeepMind in 2010; shared the 2024 Nobel Prize in Chemistry for AlphaFold.',
+        note: 'Founded DeepMind in 2010; 2024 chemistry Nobel laureate for AlphaFold; in July 2026 proposed a US-led body to test frontier models.',
       },
       {
         name: 'Ilya Sutskever',
         role: 'Co-founder & CEO',
         org: 'Safe Superintelligence',
-        note: 'OpenAI’s former chief scientist; founded SSI in 2024 to pursue superintelligence with no interim products.',
+        note: 'OpenAI’s former chief scientist; took a $5B NVIDIA investment in July 2026 to scale SSI’s still product-free superintelligence research.',
       },
       {
         name: 'Mira Murati',
         role: 'Founder & CEO',
         org: 'Thinking Machines Lab',
-        note: 'Former OpenAI CTO; raised a record ~$2B seed round in 2025.',
+        note: 'Former OpenAI CTO; after a record ~$2B seed round, shipped the lab’s first open-weight models and Tinker fine-tuning platform.',
       },
       {
         name: 'Elon Musk',
         role: 'Founder',
-        org: 'xAI / Tesla',
-        note: 'OpenAI co-founder turned litigant; xAI built the Colossus supercluster at unprecedented speed.',
+        org: 'SpaceX (xAI) / Tesla',
+        note: 'OpenAI co-founder turned litigant; folded xAI into SpaceX in 2026 as the ~555,000-GPU Colossus 2 cluster came online.',
       },
       {
         name: 'Liang Wenfeng',
         role: 'Founder',
         org: 'DeepSeek',
-        note: 'Hedge-fund founder (High-Flyer) whose lab produced V3 and R1, resetting assumptions about training costs.',
+        note: 'Hedge-fund founder (High-Flyer) whose lab’s V3, R1, and 2026’s V4 reset assumptions about training costs.',
+      },
+      {
+        name: 'Yang Zhilin',
+        role: 'Co-founder & CEO',
+        org: 'Moonshot AI',
+        note: 'CMU-trained researcher whose open-weight Kimi models — K3 in July 2026 — repeatedly set the frontier for open releases.',
+      },
+      {
+        name: 'Zhang Peng',
+        role: 'CEO',
+        org: 'Z.ai (Zhipu AI)',
+        note: 'Leads the Tsinghua-born GLM lab that became the world’s first listed LLM company with its January 2026 Hong Kong IPO.',
       },
       {
         name: 'Arthur Mensch',
         role: 'Co-founder & CEO',
         org: 'Mistral AI',
-        note: 'Former DeepMind researcher leading Europe’s flagship AI lab.',
+        note: 'Former DeepMind researcher leading Europe’s flagship AI lab, in 2026 raising at a roughly €20B valuation.',
       },
       {
         name: 'Mustafa Suleyman',
         role: 'CEO, Microsoft AI',
         org: 'Microsoft',
-        note: 'DeepMind co-founder; joined Microsoft in 2024 when it absorbed his startup Inflection.',
+        note: 'DeepMind co-founder; now leads Microsoft’s in-house MAI models and its superintelligence team after the OpenAI pact was loosened.',
+      },
+      {
+        name: 'Aravind Srinivas',
+        role: 'Co-founder & CEO',
+        org: 'Perplexity',
+        note: 'Former OpenAI researcher whose answer engine became the leading AI-native challenger to Google search.',
       },
     ],
   },
@@ -98,21 +122,39 @@ export const peopleGroups: PeopleGroup[] = [
       },
       {
         name: 'Yann LeCun',
-        role: 'Chief AI Scientist (departing)',
-        org: 'Meta',
-        note: 'Turing Award winner and LLM skeptic; announced departure from Meta in late 2025 to found a world-model startup.',
+        role: 'Co-founder',
+        org: 'AMI Labs',
+        note: 'Turing Award winner and LLM skeptic; left Meta in late 2025 and raised $1.03B in March 2026 to build JEPA world models.',
       },
       {
         name: 'Andrej Karpathy',
-        role: 'Founder',
-        org: 'Eureka Labs',
-        note: 'OpenAI founding member and former Tesla AI lead; the field’s most influential educator.',
+        role: 'Research lead',
+        org: 'Anthropic',
+        note: 'OpenAI founding member and former Tesla AI lead; joined Anthropic in May 2026 to lead a pre-training team, pausing Eureka Labs.',
+      },
+      {
+        name: 'Jakub Pachocki',
+        role: 'Chief Scientist',
+        org: 'OpenAI',
+        note: 'Succeeded Sutskever in 2024; directs the research agenda behind OpenAI’s reasoning models.',
+      },
+      {
+        name: 'Mark Chen',
+        role: 'Chief Research Officer',
+        org: 'OpenAI',
+        note: 'Shares OpenAI’s research leadership with Pachocki; longtime head of its frontier-model teams.',
       },
       {
         name: 'Noam Shazeer',
-        role: 'Co-lead, Gemini',
-        org: 'Google DeepMind',
-        note: 'Transformer co-author; returned to Google in 2024 via a ~$2.7B Character.AI licensing deal.',
+        role: 'Researcher',
+        org: 'OpenAI',
+        note: 'Transformer co-author; quit as Gemini co-lead for OpenAI in June 2026, two years after Google’s ~$2.7B Character.AI deal brought him back.',
+      },
+      {
+        name: 'Jeff Dean',
+        role: 'Chief Scientist',
+        org: 'Google',
+        note: 'Built Google’s foundational systems (MapReduce, TensorFlow); co-leads the Gemini models with Oriol Vinyals.',
       },
       {
         name: 'Jared Kaplan',
@@ -122,7 +164,7 @@ export const peopleGroups: PeopleGroup[] = [
       },
       {
         name: 'John Schulman',
-        role: 'Researcher',
+        role: 'Chief Scientist',
         org: 'Thinking Machines Lab',
         note: 'Invented PPO, the workhorse algorithm of RLHF; co-created ChatGPT at OpenAI.',
       },
@@ -133,16 +175,57 @@ export const peopleGroups: PeopleGroup[] = [
         note: 'Pioneer of mechanistic interpretability — reverse-engineering what happens inside neural networks.',
       },
       {
-        name: 'Fei-Fei Li',
-        role: 'Co-founder, World Labs; Professor',
-        org: 'Stanford',
-        note: 'Created ImageNet, the dataset that launched the deep-learning era; now building spatial-intelligence world models.',
+        name: 'Shengjia Zhao',
+        role: 'Chief Scientist',
+        org: 'Meta Superintelligence Labs',
+        note: 'GPT-4 and o1 co-creator recruited from OpenAI in 2025 to set the scientific agenda of Meta’s superintelligence effort.',
       },
+      {
+        name: 'Fei-Fei Li',
+        role: 'Co-founder & CEO, World Labs; Professor',
+        org: 'Stanford',
+        note: 'Created ImageNet, the dataset that launched the deep-learning era; World Labs shipped its Marble world-model product in 2026.',
+      },
+    ],
+  },
+  {
+    title: 'Safety & governance',
+    people: [
       {
         name: 'Jan Leike',
         role: 'Alignment lead',
         org: 'Anthropic',
-        note: 'Left OpenAI in 2024 warning that “safety culture has taken a backseat”; leads alignment research at Anthropic.',
+        note: 'Left OpenAI in 2024 warning that “safety culture has taken a backseat”; leads alignment science research at Anthropic.',
+      },
+      {
+        name: 'Jack Clark',
+        role: 'Co-founder & Head of Public Benefit',
+        org: 'Anthropic',
+        note: 'Led Anthropic policy from its founding until 2026, when he launched the Anthropic Institute think tank; writes Import AI.',
+      },
+      {
+        name: 'Dan Hendrycks',
+        role: 'Executive Director',
+        org: 'Center for AI Safety',
+        note: 'Organized the 2023 extinction-risk statement; CAIS added a national-security-focused Frontier Security Institute in 2026.',
+      },
+      {
+        name: 'Paul Christiano',
+        role: 'Head of AI Safety',
+        org: 'US Center for AI Standards and Innovation',
+        note: 'Invented RLHF at OpenAI and founded the Alignment Research Center; now runs frontier-model safety testing inside NIST.',
+      },
+      {
+        name: 'Michael Kratsios',
+        role: 'Director',
+        org: 'White House OSTP',
+        note: 'Architect of the Trump administration’s AI Action Plan and its light-touch, buildout-first regulatory posture.',
+      },
+      {
+        name: 'David Sacks',
+        role: 'Co-chair, PCAST',
+        org: 'White House',
+        note: 'The first White House AI and crypto czar; stepped down in early 2026 to co-chair the President’s Council of Advisors on Science and Technology.',
       },
     ],
   },
@@ -183,19 +266,25 @@ export const peopleGroups: PeopleGroup[] = [
         name: 'Alexandr Wang',
         role: 'Chief AI Officer',
         org: 'Meta',
-        note: 'Scale AI founder; recruited to lead Meta Superintelligence Labs in the 2025 talent wars.',
+        note: 'Scale AI founder recruited to lead Meta Superintelligence Labs in the 2025 talent wars; shipped its first frontier model in 2026.',
       },
       {
         name: 'Masayoshi Son',
         role: 'Chairman & CEO',
         org: 'SoftBank',
-        note: 'The largest single financier of the buildout — OpenAI’s mega-rounds and the Stargate datacenter venture.',
+        note: 'The largest single financier of the buildout — OpenAI’s mega-rounds and the Stargate datacenter venture, which he chairs.',
+      },
+      {
+        name: 'Larry Ellison',
+        role: 'Chairman & CTO',
+        org: 'Oracle',
+        note: 'Oracle’s $300B compute contract with OpenAI anchors the Stargate buildout, from Abilene onward.',
       },
       {
         name: 'Jonathan Ross',
-        role: 'Founder & CEO',
-        org: 'Groq',
-        note: 'Created Google’s original TPU; Groq’s LPUs made ultra-fast inference a product category.',
+        role: 'Chief Software Architect',
+        org: 'NVIDIA',
+        note: 'Created Google’s original TPU and founded Groq; joined NVIDIA after it licensed Groq’s inference technology in a ~$20B deal.',
       },
     ],
   },
