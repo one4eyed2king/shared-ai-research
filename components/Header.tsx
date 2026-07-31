@@ -1,43 +1,25 @@
 import Link from 'next/link';
+import { NavLinks } from './NavLinks';
 
 export function Header() {
   return (
-    <header className="border-b border-rule">
-      <div className="max-w-wide mx-auto px-6 py-6 flex items-baseline justify-between">
-        <Link href="/" className="group">
-          <span className="font-serif text-lg tracking-tight">
+    <header className="masthead-rule">
+      <a
+        href="#content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-paper focus:px-3 focus:py-2 focus:font-sans focus:text-sm focus:border focus:border-ink"
+      >
+        Skip to content
+      </a>
+      <div className="max-w-wide mx-auto px-6 py-6 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3">
+        <Link href="/" className="group whitespace-nowrap">
+          <span className="font-serif text-lg tracking-tight group-hover:text-accent transition-colors">
             Shared AI Research
           </span>
           <span className="ml-2 text-xs text-muted font-sans uppercase tracking-widest">
             an open archive
           </span>
         </Link>
-        <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-sans text-muted">
-          <Link href="/papers" className="hover:text-ink transition-colors">
-            Research
-          </Link>
-          <Link href="/models" className="hover:text-ink transition-colors">
-            Models
-          </Link>
-          <Link href="/advances" className="hover:text-ink transition-colors">
-            Advances
-          </Link>
-          <Link href="/people" className="hover:text-ink transition-colors">
-            People
-          </Link>
-          <Link href="/organizations" className="hover:text-ink transition-colors">
-            Organizations
-          </Link>
-          <Link href="/hardware" className="hover:text-ink transition-colors">
-            Hardware
-          </Link>
-          <Link href="/startups" className="hover:text-ink transition-colors">
-            Startups
-          </Link>
-          <Link href="/about" className="hover:text-ink transition-colors">
-            About
-          </Link>
-        </nav>
+        <NavLinks />
       </div>
     </header>
   );

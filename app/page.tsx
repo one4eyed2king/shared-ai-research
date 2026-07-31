@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import { getAllPapers } from '@/lib/papers';
 import { formatShortDate } from '@/lib/format';
+import { models } from '@/lib/data/models';
+import { advances } from '@/lib/data/advances';
+import { peopleGroups } from '@/lib/data/people';
+import { organizationGroups } from '@/lib/data/organizations';
+import { hardware } from '@/lib/data/hardware';
+import { startups } from '@/lib/data/startups';
 
 const sections = [
   {
@@ -50,11 +56,29 @@ const sections = [
 export default async function HomePage() {
   const papers = await getAllPapers();
   const featured = papers.slice(0, 4);
+  const counts: Record<string, number> = {
+    '/papers': papers.length,
+    '/models': models.length,
+    '/advances': advances.length,
+    '/people': peopleGroups.reduce((n, g) => n + g.people.length, 0),
+    '/organizations': organizationGroups.reduce((n, g) => n + g.orgs.length, 0),
+    '/hardware': hardware.length,
+    '/startups': startups.length,
+  };
+  const countLabels: Record<string, string> = {
+    '/papers': 'papers',
+    '/models': 'releases',
+    '/advances': 'advances',
+    '/people': 'people',
+    '/organizations': 'organizations',
+    '/hardware': 'accelerators',
+    '/startups': 'companies',
+  };
 
   return (
     <div className="max-w-wide mx-auto px-6">
       <section className="pt-24 pb-20 max-w-3xl">
-        <h1 className="font-serif text-5xl md:text-6xl leading-[1.05] tracking-tight">
+        <h1 className="font-serif text-5xl md:text-6xl leading-[1.05] tracking-tight text-balance">
           An open archive of research on artificial intelligence and the
           institutions it is reshaping.
         </h1>
@@ -92,10 +116,16 @@ export default async function HomePage() {
             <Link key={s.href} href={s.href} className="group block max-w-sm">
               <h3 className="font-serif text-2xl tracking-tight group-hover:text-accent transition-colors">
                 {s.title}
-                <span aria-hidden className="ml-2 text-muted group-hover:text-accent transition-colors">
+                <span
+                  aria-hidden
+                  className="inline-block ml-2 text-muted group-hover:text-accent group-hover:translate-x-1 transition-all motion-reduce:transition-none"
+                >
                   &rarr;
                 </span>
               </h3>
+              <p className="mt-1 font-sans text-xs uppercase tracking-widest text-muted/70 tabular-nums">
+                {counts[s.href]} {countLabels[s.href]}
+              </p>
               <p className="mt-2 font-serif text-[0.975rem] text-muted leading-relaxed">
                 {s.description}
               </p>

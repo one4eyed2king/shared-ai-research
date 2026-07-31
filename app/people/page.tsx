@@ -4,7 +4,7 @@ import { DirectoryBrowser } from '@/components/tracker/DirectoryBrowser';
 import { peopleGroups, peopleUpdated } from '@/lib/data/people';
 
 export const metadata: Metadata = {
-  title: 'People — Shared AI Research',
+  title: 'People',
   description:
     'A searchable directory of the people shaping the AI industry: lab leaders, researchers, and the compute and capital behind them.',
 };
@@ -26,6 +26,7 @@ export default function PeoplePage() {
         title="The people shaping the field"
         lede="Lab leaders, researchers, and the figures controlling compute and capital. Roles and affiliations move quickly; this is a snapshot, not a census."
         updated={peopleUpdated}
+        count={`${peopleGroups.reduce((n, g) => n + g.people.length, 0)} people`}
       />
       <DirectoryBrowser groups={groups} placeholder="Search people, roles, organizations…" />
     </div>

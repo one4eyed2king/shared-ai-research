@@ -4,7 +4,7 @@ import { DirectoryBrowser } from '@/components/tracker/DirectoryBrowser';
 import { organizationGroups, organizationsUpdated } from '@/lib/data/organizations';
 
 export const metadata: Metadata = {
-  title: 'Organizations — Shared AI Research',
+  title: 'Organizations',
   description:
     'A searchable directory of the organizations that structure the AI field: frontier labs, platforms, the semiconductor supply chain, research institutes, and governance bodies.',
 };
@@ -27,6 +27,7 @@ export default function OrganizationsPage() {
         title="The institutions of the AI era"
         lede="Who does what: the labs training frontier models, the platforms distributing them, the supply chain beneath them, and the institutes and agencies trying to understand and govern them. The startup tracker records funding; this page records function."
         updated={organizationsUpdated}
+        count={`${organizationGroups.reduce((n, g) => n + g.orgs.length, 0)} organizations`}
       />
       <DirectoryBrowser groups={groups} placeholder="Search organizations, roles, places…" />
     </div>

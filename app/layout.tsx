@@ -23,8 +23,15 @@ const mono = JetBrains_Mono({
   display: 'swap',
 });
 
+export const viewport = {
+  themeColor: '#fafaf7',
+};
+
 export const metadata: Metadata = {
-  title: 'Shared AI Research',
+  title: {
+    default: 'Shared AI Research',
+    template: '%s — Shared AI Research',
+  },
   description:
     'An open repository of research on artificial intelligence, its institutions, and its consequences. A nonprofit publication for humans and agents.',
   metadataBase: new URL('https://shared-ai-research.org'),

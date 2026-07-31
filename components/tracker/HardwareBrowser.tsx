@@ -76,7 +76,7 @@ export function HardwareBrowser() {
                 </thead>
                 <tbody className="divide-y divide-rule border-t border-rule">
                   {group.entries.map((h) => (
-                    <tr key={h.name} className="align-top">
+                    <tr key={h.name} className="align-top entry-hover">
                       <td className="py-4 pr-6">
                         <div className="font-serif text-[1.0625rem] leading-snug">
                           {h.name}

@@ -61,7 +61,7 @@ export function StartupsBrowser() {
       ) : (
         <ul className="divide-y divide-rule border-b border-rule">
           {filtered.map((s) => (
-            <li key={s.name} className="py-8 grid grid-cols-12 gap-6">
+            <li key={s.name} className="py-8 grid grid-cols-12 gap-6 entry-mark">
               <div className="col-span-12 md:col-span-3">
                 <h2 className="font-serif text-xl leading-snug tracking-tight">
                   {s.name}

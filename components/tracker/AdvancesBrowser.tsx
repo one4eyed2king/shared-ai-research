@@ -46,7 +46,7 @@ export function AdvancesBrowser() {
               <li
                 key={a.name}
                 id={firstOfYear ? `y${a.year}` : undefined}
-                className="py-10 grid grid-cols-12 gap-6 scroll-mt-20"
+                className="py-10 grid grid-cols-12 gap-6 scroll-mt-20 entry-mark"
               >
                 <div className="col-span-12 md:col-span-2">
                   {firstOfYear && (

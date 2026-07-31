@@ -2,7 +2,7 @@ import { getAllPapers } from '@/lib/papers';
 import PapersBrowser, { type PaperListItem } from '@/components/PapersBrowser';
 
 export const metadata = {
-  title: 'Papers — Shared AI Research',
+  title: 'Papers',
   description: 'The full archive of papers published at Shared AI Research.',
 };
 

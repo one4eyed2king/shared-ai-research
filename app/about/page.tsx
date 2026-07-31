@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'About — Shared AI Research',
+  title: 'About',
   description:
     'About Shared AI Research, an open archive for work on artificial intelligence and its institutional consequences.',
 };

@@ -79,7 +79,7 @@ export function DirectoryBrowser({
             )}
             <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
               {group.entries.map((e) => (
-                <li key={e.title} className="max-w-xl">
+                <li key={e.title} className="max-w-xl entry-mark px-2 -mx-2 py-1 -my-1">
                   <h3 className="font-serif text-xl leading-snug tracking-tight">
                     {e.title}
                   </h3>

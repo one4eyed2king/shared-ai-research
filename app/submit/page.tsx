@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Submit — Shared AI Research',
+  title: 'Submit',
   description: 'How to submit a paper to Shared AI Research.',
 };
 

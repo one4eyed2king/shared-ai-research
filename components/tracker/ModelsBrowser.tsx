@@ -75,7 +75,7 @@ export function ModelsBrowser() {
                 </thead>
                 <tbody className="divide-y divide-rule/70">
                   {entries.map((m) => (
-                    <tr key={`${m.developer}-${m.name}`} className="align-top group">
+                    <tr key={`${m.developer}-${m.name}`} className="align-top entry-hover">
                       <td className="py-4 pr-6 font-serif text-[1.0625rem] leading-snug w-[16rem]">
                         {m.name}
                       </td>

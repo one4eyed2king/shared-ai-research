@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { SectionIntro } from '@/components/SectionIntro';
 import { ModelsBrowser } from '@/components/tracker/ModelsBrowser';
-import { modelsUpdated } from '@/lib/data/models';
+import { models, modelsUpdated } from '@/lib/data/models';
 
 export const metadata: Metadata = {
-  title: 'Model tracking — Shared AI Research',
+  title: 'Model tracking',
   description:
     'A searchable chronological record of frontier and notable AI model releases.',
 };
@@ -17,6 +17,7 @@ export default function ModelsPage() {
         title="Frontier and notable model releases"
         lede="A running record of the models that defined the field: who released them, when, under what access terms, and why they mattered."
         updated={modelsUpdated}
+        count={`${models.length} releases`}
       />
       <ModelsBrowser />
     </div>
