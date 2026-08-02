@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { startups } from '@/lib/data/startups';
 import { SearchField, matches } from './SearchField';
 import { Toolbar, FilterPills, EmptyState } from './Toolbar';
+import { useTrackerQuery } from '@/lib/use-tracker-query';
 
 type SortId = 'valuation' | 'name' | 'founded';
 
@@ -17,7 +18,7 @@ function valuationValue(v: string): number {
 }
 
 export function StartupsBrowser() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useTrackerQuery();
   const [sort, setSort] = useState<SortId>('valuation');
 
   const filtered = useMemo(() => {

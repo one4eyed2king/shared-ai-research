@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import { Source_Serif_4, Inter, JetBrains_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { Shell } from '@/components/nav/Shell';
+import { getAllPapers } from '@/lib/papers';
+import { buildSearchIndex } from '@/lib/search-index';
 import './globals.css';
 import 'katex/dist/katex.min.css';
 
@@ -47,13 +49,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // Built once on the server and handed to the palette as a reduced record, so
+  // the source datasets never ship to the client just to be searched.
+  const docs = buildSearchIndex(await getAllPapers());
+
   return (
     <html lang="en" className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
       <body className="min-h-screen flex flex-col bg-paper text-ink">
-        <Header />
-        <main id="content" className="flex-1">{children}</main>
-        <Footer />
+        <Shell docs={docs} footer={<Footer />}>
+          {children}
+        </Shell>
         <Analytics />
         <SpeedInsights />
       </body>

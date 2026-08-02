@@ -1,14 +1,9 @@
 import Link from 'next/link';
+import { navGroups } from '@/lib/nav';
 
-const sections = [
-  { href: '/papers', label: 'Research' },
-  { href: '/models', label: 'Models' },
-  { href: '/advances', label: 'Advances' },
-  { href: '/people', label: 'People' },
-  { href: '/organizations', label: 'Organizations' },
-  { href: '/hardware', label: 'Hardware' },
-  { href: '/startups', label: 'Startups' },
-];
+// Grouped the same way as the sidebar, from the same source, so the footer
+// cannot drift out of step with the nav as sections are added.
+const columns = navGroups.filter((g) => g.id !== 'meta');
 
 export function Footer() {
   return (
@@ -22,22 +17,26 @@ export function Footer() {
             and agents.
           </p>
         </div>
-        <nav aria-label="Footer sections" className="font-sans text-sm">
-          <p className="text-xs uppercase tracking-widest text-muted mb-3">
-            Sections
-          </p>
-          <ul className="grid grid-cols-2 gap-x-8 gap-y-2">
-            {sections.map((s) => (
-              <li key={s.href}>
-                <Link
-                  href={s.href}
-                  className="text-muted hover:text-ink transition-colors"
-                >
-                  {s.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <nav aria-label="Footer sections" className="font-sans text-sm grid grid-cols-2 gap-x-8 gap-y-6">
+          {columns.map((group) => (
+            <div key={group.id}>
+              <p className="text-xs uppercase tracking-widest text-muted mb-3">
+                {group.label}
+              </p>
+              <ul className="space-y-2">
+                {group.items.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-muted hover:text-ink transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </nav>
         <div className="font-sans text-sm">
           <p className="text-xs uppercase tracking-widest text-muted mb-3">

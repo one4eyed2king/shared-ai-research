@@ -4,9 +4,10 @@ import { useMemo, useState } from 'react';
 import { advances } from '@/lib/data/advances';
 import { SearchField, matches } from './SearchField';
 import { Toolbar, JumpNav, EmptyState } from './Toolbar';
+import { useTrackerQuery } from '@/lib/use-tracker-query';
 
 export function AdvancesBrowser() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useTrackerQuery();
 
   const filtered = useMemo(
     () => advances.filter((a) => matches(query, a.name, a.what, a.why, a.reference, a.year)),

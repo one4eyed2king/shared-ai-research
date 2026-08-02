@@ -24,3 +24,5 @@ Tasks for shared-ai-research.org. Read live by the mybase dashboard — keep the
 - [x] Restate the chip in the app icon as leads only, no die outline (done 2026-08-02)
 - [x] Make the app-icon chip explicit again and move to a red-to-black fade (done 2026-08-02)
 - [x] Redraw the app-icon chip as a bare die and set the mark in thin white (done 2026-08-02)
+- [x] Rebuild navigation on the Cloudflare model: grouped sidebar, section tabs, breadcrumbs (done 2026-08-02)
+- [x] Add cross-section search over every tracker and paper, opened with ⌘K (done 2026-08-02)

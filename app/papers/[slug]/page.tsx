@@ -17,7 +17,8 @@ export async function generateMetadata({ params }: PageProps) {
   const paper = await getPaper(slug);
   if (!paper) return {};
   return {
-    title: `${paper.title} — Shared AI Research`,
+    // The root layout's metadata template already appends the site name.
+    title: paper.title,
     description: paper.abstract,
     openGraph: {
       title: paper.title,

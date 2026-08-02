@@ -4,9 +4,10 @@ import { useMemo, useState } from 'react';
 import { hardwareByVendor } from '@/lib/data/hardware';
 import { SearchField, matches } from './SearchField';
 import { Toolbar, JumpNav, EmptyState, slugify } from './Toolbar';
+import { useTrackerQuery } from '@/lib/use-tracker-query';
 
 export function HardwareBrowser() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useTrackerQuery();
   const groups = useMemo(() => hardwareByVendor(), []);
   const total = groups.reduce((n, g) => n + g.entries.length, 0);
 

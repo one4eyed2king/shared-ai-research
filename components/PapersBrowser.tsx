@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState, type ReactElement, type ReactNode } from 'react';
 import Link from 'next/link';
 import { formatShortDate } from '@/lib/format';
+import { useTrackerQuery } from '@/lib/use-tracker-query';
 
 export interface PaperListItem {
   slug: string;
@@ -55,7 +56,7 @@ function toggle<T>(arr: T[], value: T): T[] {
 export default function PapersBrowser({ papers }: { papers: PaperListItem[] }) {
   const [view, setView] = useState<ViewId>('list');
   const [sort, setSort] = useState<SortId>('newest');
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useTrackerQuery();
   const [tags, setTags] = useState<string[]>([]);
   const [authors, setAuthors] = useState<string[]>([]);
   const [lengths, setLengths] = useState<LengthId[]>([]);

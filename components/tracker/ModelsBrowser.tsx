@@ -5,11 +5,12 @@ import { models } from '@/lib/data/models';
 import { formatYearMonth } from '@/lib/format';
 import { SearchField, matches } from './SearchField';
 import { Toolbar, FilterPills, EmptyState } from './Toolbar';
+import { useTrackerQuery } from '@/lib/use-tracker-query';
 
 type AccessFilter = 'all' | 'Proprietary' | 'Open weights';
 
 export function ModelsBrowser() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useTrackerQuery();
   const [access, setAccess] = useState<AccessFilter>('all');
 
   const filtered = useMemo(
