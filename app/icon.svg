@@ -10,22 +10,23 @@
     glyph's own eye counter.
 
     The chip is a bare die, not a packaged part, and follows how dies are
-    actually drawn: square corners, because a die is sawn from a wafer and
-    the rounded rectangle is a pictogram convention rather than a real shape;
-    a chamfered top-left corner as the pin-1 orientation marker; an inner
-    seal ring; and a ring of square bond pads inset from the edge. An earlier
-    pass used a rounded rect with lozenge leads — the generic chip glyph,
-    which carried no more meaning than a sketch.
+    actually drawn: square corners, because a die is sawn from a wafer and the
+    rounded rectangle is a pictogram convention rather than a real shape; a
+    chamfered top-left corner as the pin-1 orientation marker; an inner seal
+    ring; and a ring of square bond pads inset from the edge.
 
     The pad ring is dense on purpose. Pads the cobra would slice are dropped
-    outright (16 of 36), and at this pitch the resulting gap reads as
-    the cobra occluding the ring. A sparse ring with the same holes in it
-    just reads as broken.
+    outright, and at this pitch the resulting gap reads as the cobra occluding
+    the ring. A sparse ring with the same holes just reads as broken.
 
-    Where the cobra crosses the die, the die is knocked out by a real mask
-    (#k) rather than by painting a background-coloured halo over it, as the
-    original mark did. On a gradient a painted halo shows as a solid smear; a
-    mask cuts an even gap whatever sits behind it.
+    Where the cobra crosses the die, the die is knocked out by a real mask (#k)
+    rather than by painting a background-coloured halo over it. On a gradient a
+    painted halo shows as a solid smear; a mask cuts an even gap whatever sits
+    behind it.
+
+    Margins are tight by intent: the die sits 88px off a 512 tile. The tile's
+    corner radius is 104, so the die's square corners still clear the rounded
+    corners with room to spare.
   -->
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
@@ -34,7 +35,7 @@
     </linearGradient>
     <mask id="k" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
       <rect width="512" height="512" fill="#fff"/>
-      <g transform="translate(116.5,419.7) scale(0.3330,-0.3330)">
+      <g transform="translate(105.0,433.2) scale(0.3604,-0.3604)">
         <path d="M759 -19Q723 2 695.5 32.5Q668 63 646.5 99.0Q625 135 604 170Q594 166 574.5 161.0Q555 156 529 156Q494 156 458.0 171.0Q422 186 392 200Q366 187 324.5 170.5Q283 154 236 154Q182 154 147.0 177.0Q112 200 112 238Q112 253 121.0 270.0Q130 287 138 297Q134 306 127.0 326.0Q120 346 120 379Q120 393 122.5 415.0Q125 437 128 461Q132 491 135.5 520.0Q139 549 139 573Q139 593 134.5 609.5Q130 626 124 642Q118 659 113.0 677.5Q108 696 108 721Q108 760 118.5 797.0Q129 834 158 862Q142 859 130 859Q119 859 99.5 862.5Q80 866 64.5 875.5Q49 885 49 903Q49 919 63.0 942.5Q77 966 108.0 984.0Q139 1002 188 1002Q232 1002 257.0 986.0Q282 970 301 954Q324 935 351.5 907.0Q379 879 399.0 846.5Q419 814 419 779Q419 713 390.0 649.5Q361 586 326 524Q319 511 307.5 489.0Q296 467 284.5 442.5Q273 418 266.0 396.0Q259 374 262 360Q292 360 320.0 353.0Q348 346 365 330L436 352Q437 353 452.0 357.0Q467 361 489.0 365.0Q511 369 533 369Q579 369 606.5 353.0Q634 337 646.5 315.0Q659 293 659 274Q659 261 657.0 247.5Q655 234 653 227Q679 165 709.5 110.0Q740 55 789 3ZM261 244Q298 244 326.5 250.5Q355 257 388 267Q422 278 455.5 287.0Q489 296 519 296Q548 296 580.0 285.5Q612 275 637 249Q638 255 638.5 261.5Q639 268 639 274Q639 289 628.5 306.5Q618 324 595.0 336.5Q572 349 533 349Q506 349 482.0 343.5Q458 338 441 333Q423 329 399.0 321.0Q375 313 351.0 306.5Q327 300 306 300Q278 300 260.5 318.0Q243 336 243 364Q243 405 265.0 449.5Q287 494 309 534Q329 569 350.0 609.0Q371 649 385.5 692.5Q400 736 400 779Q400 814 382.0 842.5Q364 871 338.0 894.5Q312 918 288 939Q272 954 249.0 968.0Q226 982 188 982Q146 982 119.5 967.5Q93 953 80.5 934.5Q68 916 68 903Q68 893 80.0 887.5Q92 882 107.0 880.5Q122 879 130 879Q138 879 153.0 881.5Q168 884 182.0 886.5Q196 889 199 890Q210 895 222.0 896.5Q234 898 247 898Q258 898 270.0 896.5Q282 895 292 890L286 871Q276 875 266.0 876.5Q256 878 247 878Q237 878 226.5 877.0Q216 876 206 871Q157 849 142.0 807.5Q127 766 127 721Q127 699 132.0 681.5Q137 664 143 648Q148 632 153.0 614.0Q158 596 158 573Q158 548 154.5 518.5Q151 489 147 459Q144 434 142.0 413.0Q140 392 140 379Q140 339 150.0 319.5Q160 300 164 294Q169 287 181.5 275.0Q194 263 214.0 253.5Q234 244 261 244ZM142 920Q126 920 126 935Q126 950 142 950Q156 950 156 935Q156 920 142 920ZM306 320Q316 320 325.0 321.5Q334 323 341 324Q325 332 305.5 336.0Q286 340 267 340Q271 334 280.5 327.0Q290 320 306 320ZM236 174Q273 174 309.0 186.5Q345 199 372 212L343 234Q306 225 261 225Q231 225 208.5 235.0Q186 245 171.5 258.0Q157 271 150 280Q143 273 137.0 262.0Q131 251 131 238Q131 209 160.5 191.5Q190 174 236 174ZM756 3 762 7Q736 35 700.5 90.0Q665 145 638 212Q629 236 608.0 250.0Q587 264 563.0 270.0Q539 276 519 276Q500 276 481 272Q518 264 542 252Q574 237 590.0 222.0Q606 207 614 192Q629 166 651.5 127.5Q674 89 701.0 54.0Q728 19 756 3ZM529 176Q548 176 565.0 180.0Q582 184 593 188Q585 199 572.0 210.5Q559 222 533 235Q516 243 487.5 250.5Q459 258 436 261Q426 258 415.5 255.0Q405 252 394 249Q387 247 380.5 244.5Q374 242 367 240Q376 233 389.0 225.0Q402 217 411 213Q432 203 465.0 189.5Q498 176 529 176Z" fill="#000" stroke="#000" stroke-width="68" stroke-linejoin="round"/>
       </g>
     </mask>
@@ -43,12 +44,12 @@
   <rect width="512" height="512" rx="104" fill="url(#bg)"/>
 
   <g mask="url(#k)" stroke="#f2f0ec" stroke-linejoin="miter">
-    <path d="M134 100 H412 V412 H100 V134 Z" fill="none" stroke-width="5.5"/>
-    <path d="M142 116 H396 V396 H116 V142 Z" fill="none" stroke-width="3"/>
-    <g fill="#f2f0ec" stroke="none"><rect x="129" y="213" width="10" height="10"/><rect x="129" y="239" width="10" height="10"/><rect x="129" y="265" width="10" height="10"/><rect x="129" y="291" width="10" height="10"/><rect x="129" y="317" width="10" height="10"/><rect x="129" y="343" width="10" height="10"/><rect x="135" y="373" width="10" height="10"/><rect x="239" y="373" width="10" height="10"/><rect x="291" y="129" width="10" height="10"/><rect x="317" y="129" width="10" height="10"/><rect x="343" y="129" width="10" height="10"/><rect x="373" y="135" width="10" height="10"/><rect x="373" y="161" width="10" height="10"/><rect x="373" y="187" width="10" height="10"/><rect x="373" y="213" width="10" height="10"/><rect x="373" y="239" width="10" height="10"/><rect x="373" y="265" width="10" height="10"/><rect x="373" y="291" width="10" height="10"/><rect x="373" y="317" width="10" height="10"/><rect x="373" y="343" width="10" height="10"/></g>
+    <path d="M124 88 H424 V424 H88 V124 Z" fill="none" stroke-width="6"/>
+    <path d="M133 105 H407 V407 H105 V133 Z" fill="none" stroke-width="3.2"/>
+    <g fill="#f2f0ec" stroke="none"><rect x="119" y="210" width="11" height="11"/><rect x="119" y="238" width="11" height="11"/><rect x="119" y="266" width="11" height="11"/><rect x="119" y="294" width="11" height="11"/><rect x="119" y="322" width="11" height="11"/><rect x="119" y="350" width="11" height="11"/><rect x="126" y="382" width="11" height="11"/><rect x="238" y="382" width="11" height="11"/><rect x="294" y="119" width="11" height="11"/><rect x="322" y="119" width="11" height="11"/><rect x="350" y="119" width="11" height="11"/><rect x="382" y="126" width="11" height="11"/><rect x="382" y="154" width="11" height="11"/><rect x="382" y="182" width="11" height="11"/><rect x="382" y="210" width="11" height="11"/><rect x="382" y="238" width="11" height="11"/><rect x="382" y="266" width="11" height="11"/><rect x="382" y="294" width="11" height="11"/><rect x="382" y="322" width="11" height="11"/><rect x="382" y="350" width="11" height="11"/></g>
   </g>
 
-  <g transform="translate(116.5,419.7) scale(0.3330,-0.3330)">
+  <g transform="translate(105.0,433.2) scale(0.3604,-0.3604)">
     <path d="M759 -19Q723 2 695.5 32.5Q668 63 646.5 99.0Q625 135 604 170Q594 166 574.5 161.0Q555 156 529 156Q494 156 458.0 171.0Q422 186 392 200Q366 187 324.5 170.5Q283 154 236 154Q182 154 147.0 177.0Q112 200 112 238Q112 253 121.0 270.0Q130 287 138 297Q134 306 127.0 326.0Q120 346 120 379Q120 393 122.5 415.0Q125 437 128 461Q132 491 135.5 520.0Q139 549 139 573Q139 593 134.5 609.5Q130 626 124 642Q118 659 113.0 677.5Q108 696 108 721Q108 760 118.5 797.0Q129 834 158 862Q142 859 130 859Q119 859 99.5 862.5Q80 866 64.5 875.5Q49 885 49 903Q49 919 63.0 942.5Q77 966 108.0 984.0Q139 1002 188 1002Q232 1002 257.0 986.0Q282 970 301 954Q324 935 351.5 907.0Q379 879 399.0 846.5Q419 814 419 779Q419 713 390.0 649.5Q361 586 326 524Q319 511 307.5 489.0Q296 467 284.5 442.5Q273 418 266.0 396.0Q259 374 262 360Q292 360 320.0 353.0Q348 346 365 330L436 352Q437 353 452.0 357.0Q467 361 489.0 365.0Q511 369 533 369Q579 369 606.5 353.0Q634 337 646.5 315.0Q659 293 659 274Q659 261 657.0 247.5Q655 234 653 227Q679 165 709.5 110.0Q740 55 789 3ZM261 244Q298 244 326.5 250.5Q355 257 388 267Q422 278 455.5 287.0Q489 296 519 296Q548 296 580.0 285.5Q612 275 637 249Q638 255 638.5 261.5Q639 268 639 274Q639 289 628.5 306.5Q618 324 595.0 336.5Q572 349 533 349Q506 349 482.0 343.5Q458 338 441 333Q423 329 399.0 321.0Q375 313 351.0 306.5Q327 300 306 300Q278 300 260.5 318.0Q243 336 243 364Q243 405 265.0 449.5Q287 494 309 534Q329 569 350.0 609.0Q371 649 385.5 692.5Q400 736 400 779Q400 814 382.0 842.5Q364 871 338.0 894.5Q312 918 288 939Q272 954 249.0 968.0Q226 982 188 982Q146 982 119.5 967.5Q93 953 80.5 934.5Q68 916 68 903Q68 893 80.0 887.5Q92 882 107.0 880.5Q122 879 130 879Q138 879 153.0 881.5Q168 884 182.0 886.5Q196 889 199 890Q210 895 222.0 896.5Q234 898 247 898Q258 898 270.0 896.5Q282 895 292 890L286 871Q276 875 266.0 876.5Q256 878 247 878Q237 878 226.5 877.0Q216 876 206 871Q157 849 142.0 807.5Q127 766 127 721Q127 699 132.0 681.5Q137 664 143 648Q148 632 153.0 614.0Q158 596 158 573Q158 548 154.5 518.5Q151 489 147 459Q144 434 142.0 413.0Q140 392 140 379Q140 339 150.0 319.5Q160 300 164 294Q169 287 181.5 275.0Q194 263 214.0 253.5Q234 244 261 244ZM142 920Q126 920 126 935Q126 950 142 950Q156 950 156 935Q156 920 142 920ZM306 320Q316 320 325.0 321.5Q334 323 341 324Q325 332 305.5 336.0Q286 340 267 340Q271 334 280.5 327.0Q290 320 306 320ZM236 174Q273 174 309.0 186.5Q345 199 372 212L343 234Q306 225 261 225Q231 225 208.5 235.0Q186 245 171.5 258.0Q157 271 150 280Q143 273 137.0 262.0Q131 251 131 238Q131 209 160.5 191.5Q190 174 236 174ZM756 3 762 7Q736 35 700.5 90.0Q665 145 638 212Q629 236 608.0 250.0Q587 264 563.0 270.0Q539 276 519 276Q500 276 481 272Q518 264 542 252Q574 237 590.0 222.0Q606 207 614 192Q629 166 651.5 127.5Q674 89 701.0 54.0Q728 19 756 3ZM529 176Q548 176 565.0 180.0Q582 184 593 188Q585 199 572.0 210.5Q559 222 533 235Q516 243 487.5 250.5Q459 258 436 261Q426 258 415.5 255.0Q405 252 394 249Q387 247 380.5 244.5Q374 242 367 240Q376 233 389.0 225.0Q402 217 411 213Q432 203 465.0 189.5Q498 176 529 176Z" fill="#f2f0ec" stroke="#f2f0ec" stroke-width="12" stroke-linejoin="round"/>
     <circle cx="141" cy="933" r="17" fill="#0a0708"/>
   </g>
