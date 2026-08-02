@@ -20,3 +20,5 @@ Tasks for shared-ai-research.org. Read live by the mybase dashboard — keep the
 - [x] Redirect www to the bare domain (done 2026-07-31)
 - [x] Add Vercel Web Analytics and Speed Insights (done 2026-07-31)
 - [x] App icon: the uraeus coiled over an AI chip (done 2026-08-01)
+- [x] Redraw the app icon from the real U+13197 uraeus hieroglyph (done 2026-08-02)
+- [x] Restate the chip in the app icon as leads only, no die outline (done 2026-08-02)
